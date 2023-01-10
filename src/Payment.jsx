@@ -3,7 +3,7 @@ import "./Payment.scss";
 import cData from "./data/data.json";
 
 //assets
-//dropdown logo
+//dropdown logojhgjhg
 import drop_logo from "./assets/dropdown.png";
 import correct_logo from "./assets/correct.png";
 import { useState } from "react";
