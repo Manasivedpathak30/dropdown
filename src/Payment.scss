@@ -1,0 +1,163 @@
+//font import 'Manrope'
+@import url('https://fonts.googleapis.com/css?family=Manrope');
+
+//variables
+$white:#FFFFFF;
+$faint-white:#F6F6F6;
+$dark-white: #D9D9D9;
+$red:#F76262;
+$gray:#393E46;
+$blue:#2C3996;
+$green: #7DCE94;
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Manrope",sans-serif;
+    user-select: none;
+}
+@mixin align-center{
+    display: flex;
+    align-items: center;
+}
+@mixin align-end{
+    display: flex;
+    align-items: flex-end   ;
+}
+
+
+.payment-con{
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+
+    .payment-header{
+        height: 80px;
+        background-color: $faint-white;
+        border-radius: 7px;
+        box-shadow: 0 4px 10px rgba(34, 40, 49,0.25);
+        z-index: 1;
+        position: relative;
+
+        display: grid;
+        grid-template-columns: 30% 30% 30% 10%;
+
+        .header-title{
+            @include align-center();
+            padding-left: 30px;
+
+            p{
+                font-size: 1.4em;
+            }
+        }
+        .header-id{
+            @include align-center();
+            justify-content: center;
+            padding-right: 10%;
+            color: $gray;
+        }
+        .header-status{
+            @include align-center();
+            font-weight: bold;
+            justify-content: center
+        }
+        .header-logo{
+            @include align-center();
+            justify-content: center;
+            img{
+                width: 10%;
+                height: auto;
+                
+            }
+            img.active{
+                transform: rotate(-180deg);
+            }
+        }
+    }
+    .payment-header:hover{
+        cursor: pointer;
+    }
+
+    .payment-dropdown{
+        background-color: $white;
+        padding: 10px 20px 10px 20px;
+        box-shadow: 0 4px 10px rgba(34, 40, 49,0.25);
+        display: none;
+        border-radius: 0 0 7px 7px;
+
+
+        .tranch-con{
+            height: 50px; 
+            border-bottom: 1px solid rgba(128, 128, 128,0.5);
+            margin-top: 10px;
+
+            display: grid;
+            grid-template-columns: 30% 30% auto;
+
+            .tranch-title{
+                @include align-end();
+                padding: 0 0 5px 5px;
+
+                p{
+                    font-size: 1.2em;
+                }
+            }
+            .tranch-status{
+                @include align-center();
+                justify-content: center;
+                padding-right: 20%;
+
+                img{
+                    width: 20px;
+                    height: auto;
+                    object-fit: contain;
+                    object-position: center;
+                    margin-left: 9%;
+                }
+                
+
+                p{
+                    font-weight: bold;
+                    color: $red;
+                    margin-left: 5%;
+                }
+            }
+            .tranch-btn-con{
+                @include align-center();
+                justify-content: center;
+                padding-right: 15%;
+
+                button.paid{
+                    background-color: $dark-white;
+                    color: $gray;
+                }
+                button.paid:hover{
+                    cursor: no-drop;
+                }
+
+                button{
+                    font-size: 0.8em;
+                    color: $faint-white;
+                    font-weight: bold;
+                    background-color: $blue;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 7px;
+
+                }
+                button:hover:not(.paid){
+                    cursor: pointer;
+                    background-color: rgba($color: $blue, $alpha: .7);
+                }
+            }
+        }
+    }
+
+    .payment-dropdown.active{
+        display: block;
+    }
+    
+    
+}
